@@ -1,0 +1,71 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+
+h1, h2, h5 {
+  font-family: 'Lora', serif;
+  color: #6B4226;
+
+}
+p{
+  color: #333;
+}
+
+.navbar-brand {
+  font-family: 'Lora', serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #FFC107;
+}
+
+.card {
+  border: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-dark {
+  background-color: #6B4226;
+  border: none;
+}
+
+.btn-dark:hover {
+  background-color: #8D5524;
+}
+
+footer {
+  background-color: #636363;
+  color: #fff;
+}
+
+footer a {
+  color: #fff;
+  margin: 0 10px;
+  transition: transform 0.3s;
+
+}
+
+footer a:hover {
+  transform: scale(1.2);
+}
+.navbar-logo {
+  width: 120px; 
+  height: auto; 
+  margin-right: 50px;
+}
+p2{
+color: #fff;
+}

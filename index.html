@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Los Caballeros del León</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+    <a class="navbar-brand" href="#">
+        <img src="imagenes/logo.png" alt="Logo" class="navbar-logo"> Café Los Caballeros del León
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('about')">Quiénes Somos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('gallery')">Galería</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('menu')">Menú</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section id="about" class="container-fluid text-center text-white" style="background-image: url('imagenes/portada.jpg'); background-size: cover; background-position: center; height: 100vh; display: flex; justify-content: center; align-items: center;">
+    <div>
+        <h1 class="display-4 font-weight-bold">El Arte del Café Huánuqueño</h1>
+        <p class="lead">Disfruta del café más exclusivo y artesanal de la region de Huánuco.</p>
+    </div>
+</section>
+
+<section id="gallery" class="container py-5" style="display:none;">
+    <h2 class="text-center mb-4">Galería</h2>
+    <div class="row text-center">
+        <div class="col-md-3 mb-4">
+            <img src="imagenes/cafeconleche.jpg" class="img-fluid rounded shadow-sm" alt="Café con Leche">
+            <h5 class="mt-3">Café con Leche</h5>
+            <p>Un clasico cafe acompañado con el toque perfecto de leche para los más pequeños </p>
+        </div>
+        <div class="col-md-3 mb-4">
+            <img src="imagenes/lateblanco.jpg" class="img-fluid rounded shadow-sm" alt="Flat White">
+            <h5 class="mt-3">Flat White</h5>
+            <p>bebida de café con leche que se prepara con una doble medida de espresso y leche caliente o vaporizada</p>
+        </div>
+        <div class="col-md-3 mb-4">
+            <img src="imagenes/cafeirlandes.jpg" class="img-fluid rounded shadow-sm" alt="Café Irlandés">
+            <h5 class="mt-3">Café Irlandés</h5>
+            <p> cóctel caliente que se prepara con whisky irlandés, café, crema batida y azúca</p>
+        </div>
+        <div class="col-md-3 mb-4">
+            <img src="imagenes/Cappuccino.jpg" class="img-fluid rounded shadow-sm" alt="Cappuccino">
+            <h5 class="mt-3">Cappuccino</h5>
+            <p> bebida de café que combina espresso, leche vaporizada y espuma de leche </p>
+        </div>
+    </div>
+</section>
+
+<section id="menu" class="container py-5" style="display:none;">
+    <h2 class="text-center mb-4">Nuestro Menú</h2>
+    <div class="row">
+        <div class="col-md-3 text-center mb-4">
+            <div class="card shadow-sm">
+                <img src="imagenes/cafeconleche.jpg" class="card-img-top" alt="Café con Leche">
+                <div class="card-body">
+                    <h5 class="card-title">Café con Leche</h5>
+                    <p class="card-text">Precio: S/5.00</p>
+                    <button class="btn btn-dark" onclick="addToInvoice('Café con Leche', 5)">Pedir</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 text-center mb-4">
+            <div class="card shadow-sm">
+                <img src="imagenes/lateblanco.jpg" class="card-img-top" alt="Flat White">
+                <div class="card-body">
+                    <h5 class="card-title">Flat White</h5>
+                    <p class="card-text">Precio: S/6.50</p>
+                    <button class="btn btn-dark" onclick="addToInvoice('Flat White', 6.5)">Pedir</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 text-center mb-4">
+            <div class="card shadow-sm">
+                <img src="imagenes/cafeirlandes.jpg" class="card-img-top" alt="Café Irlandés">
+                <div class="card-body">
+                    <h5 class="card-title">Café Irlandés</h5>
+                    <p class="card-text">Precio: S/10.00</p>
+                    <button class="btn btn-dark" onclick="addToInvoice('Café Irlandés', 10)">Pedir</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 text-center mb-4">
+            <div class="card shadow-sm">
+                <img src="imagenes/Cappuccino.jpg" class="card-img-top" alt="Cappuccino">
+                <div class="card-body">
+                    <h5 class="card-title">Cappuccino</h5>
+                    <p class="card-text">Precio: S/7.50</p>
+                    <button class="btn btn-dark" onclick="addToInvoice('Cappuccino', 7.5)">Pedir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="text-center mt-4">Emitir Factura</h3>
+    <form id="invoice-form" class="mt-4">
+        <div class="form-group">
+            <label for="client-name">Nombre del Cliente</label>
+            <input type="text" class="form-control" id="client-name" placeholder="Ingresa el nombre del cliente">
+        </div>
+        <button type="button" class="btn btn-dark" onclick="printInvoice()">Imprimir Factura</button>
+    </form>
+
+    <h3 class="mt-4">Factura</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody id="invoice-table"></tbody>
+    </table>
+    <h4>Total: S/<span id="total-amount">0.00</span></h4>
+</section>
+
+<footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+        <p2>&copy; 2024 Café Los Caballeros del León. Todos los derechos reservados. </p2>
+        <div class="d-flex justify-content-center">
+            <a href="https://wa.me/902336104" target="_blank" class="text-white mx-2"><img src="imagenes/Whatsapp.png" alt="WhatsApp" width="24"></a>
+            <a href="https://instagram.com/tucafe" target="_blank" class="text-white mx-2"><img src="imagenes/ig.png" alt="Instagram" width="24"></a>
+            <a href="aeblasl94@gmail.com" class="text-white mx-2"><img src="imagenes/correo.jpg" alt="Email" width="24"></a>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
